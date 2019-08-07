@@ -1,0 +1,13 @@
+heartbeat.monitors:
+
+output.elasticsearch:
+  hosts: ["localhost:9200"]
+
+processors:
+  - add_observer_metadata: 
+      geo: 
+        name: "${GEO_NAME}"
+        location: "37.926868, -78.024902"
+
+#logging.level: debug
+#logging.selectors: ["*"]
