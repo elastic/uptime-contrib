@@ -1,500 +1,500 @@
 heartbeat.monitors:
-- id: 0000-yellow
+- id: 0000-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0001-green
+- id: 0001-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0002-green
+- id: 0002-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0003-green
+- id: 0003-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0004-green
+- id: 0004-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0005-green
+- id: 0005-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0006-green
+- id: 0006-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0007-green
+- id: 0007-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0008-green
+- id: 0008-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0009-green
+- id: 0009-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0010-red
+- id: 0010-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0011-green
+- id: 0011-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0012-green
+- id: 0012-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0013-green
+- id: 0013-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0014-green
+- id: 0014-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0015-yellow
+- id: 0015-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0016-green
+- id: 0016-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0017-green
+- id: 0017-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0018-green
+- id: 0018-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0019-green
+- id: 0019-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0020-red
+- id: 0020-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0021-green
+- id: 0021-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0022-green
+- id: 0022-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0023-green
+- id: 0023-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0024-green
+- id: 0024-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0025-green
+- id: 0025-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0026-green
+- id: 0026-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0027-green
+- id: 0027-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0028-green
+- id: 0028-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0029-green
+- id: 0029-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0030-yellow
+- id: 0030-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0031-green
+- id: 0031-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0032-green
+- id: 0032-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0033-green
+- id: 0033-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0034-green
+- id: 0034-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0035-green
+- id: 0035-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0036-green
+- id: 0036-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0037-green
+- id: 0037-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0038-green
+- id: 0038-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0039-green
+- id: 0039-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0040-red
+- id: 0040-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0041-green
+- id: 0041-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0042-green
+- id: 0042-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0043-green
+- id: 0043-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0044-green
+- id: 0044-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0045-yellow
+- id: 0045-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0046-green
+- id: 0046-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0047-green
+- id: 0047-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0048-green
+- id: 0048-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0049-green
+- id: 0049-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0050-red
+- id: 0050-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0051-green
+- id: 0051-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0052-green
+- id: 0052-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0053-green
+- id: 0053-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0054-green
+- id: 0054-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0055-green
+- id: 0055-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0056-green
+- id: 0056-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0057-green
+- id: 0057-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0058-green
+- id: 0058-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0059-green
+- id: 0059-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0060-yellow
+- id: 0060-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0061-green
+- id: 0061-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0062-green
+- id: 0062-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0063-green
+- id: 0063-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0064-green
+- id: 0064-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0065-green
+- id: 0065-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0066-green
+- id: 0066-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0067-green
+- id: 0067-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0068-green
+- id: 0068-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0069-green
+- id: 0069-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0070-red
+- id: 0070-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0071-green
+- id: 0071-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0072-green
+- id: 0072-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0073-green
+- id: 0073-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0074-green
+- id: 0074-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0075-yellow
+- id: 0075-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0076-green
+- id: 0076-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0077-green
+- id: 0077-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0078-green
+- id: 0078-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0079-green
+- id: 0079-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0080-red
+- id: 0080-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0081-green
+- id: 0081-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0082-green
+- id: 0082-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0083-green
+- id: 0083-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0084-green
+- id: 0084-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0085-green
+- id: 0085-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0086-green
+- id: 0086-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0087-green
+- id: 0087-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0088-green
+- id: 0088-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0089-green
+- id: 0089-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0090-yellow
+- id: 0090-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0091-green
+- id: 0091-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0092-green
+- id: 0092-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0093-green
+- id: 0093-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0094-green
+- id: 0094-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0095-green
+- id: 0095-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0096-green
+- id: 0096-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0097-green
+- id: 0097-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0098-green
+- id: 0098-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
   urls: http://localhost:5678
-- id: 0099-green
+- id: 0099-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
