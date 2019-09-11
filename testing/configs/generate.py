@@ -13,23 +13,23 @@ with open("./_template.yml", 'r') as stream:
   
   count = int(sys.argv[1])
 
-  monitorColorsToPatterns = {
-          'green': '200x1',
-          'red': '400x1',
-          'yellow': '200x5,500x1',
+  statusToPattern = {
+          'up': '200x1',
+          'down': '400x1',
+          'intermittent': '200x5,500x1',
   }
   
   monitors = []
   for i in range(0, count):
-    color = 'green'
+    status = 'up'
     if i % 15 == 0:
-        color = 'yellow'
+        status = 'intermittent'
     elif i % 10 == 0:
-        color = 'red'
+        status = 'down'
 
-    url = "http://localhost:5678/pattern?r=%s" % monitorColorsToPatterns[color]
+    url = "http://localhost:5678/pattern?r=%s" % statusToPattern[status]
     monitors.append({
-      "id": '%04d-%s' % (i, color),
+      "id": '%04d-%s' % (i, status),
       "type": "http",
       "schedule": "@every 30s",
       "urls": "http://localhost:5678",
