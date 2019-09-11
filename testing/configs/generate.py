@@ -12,11 +12,24 @@ with open("./_template.yml", 'r') as stream:
   y = yaml.safe_load(stream)
   
   count = int(sys.argv[1])
+
+  monitorColorsToPatterns = {
+          'green': '200x1',
+          'red': '400x1',
+          'yellow': '200x5,500x1',
+  }
   
   monitors = []
   for i in range(0, count):
+    color = 'green'
+    if i % 15 == 0:
+        color = 'yellow'
+    elif i % 10 == 0:
+        color = 'red'
+
+    url = "http://localhost:5678/pattern?r=%s" % monitorColorsToPatterns[color]
     monitors.append({
-      "id": 'green-%04d' % i,
+      "id": '%04d-%s' % (i, color),
       "type": "http",
       "schedule": "@every 30s",
       "urls": "http://localhost:5678",

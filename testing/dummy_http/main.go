@@ -14,9 +14,9 @@ import (
 	"time"
 )
 
-// An URL like /pattern?r='200x50,404x20,200|500x30'
-// The above pattern would return 50 200 responses, then 20 404s, then randomly return a mix of 200 and 500
-// responses 30 times
+var readme = []byte("Dummy HTTP Server\nExample req: Use a path like /pattern?r='200x50,404x20,200|500x30'. " +
+	"That pattern would return 50 200 responses, then 20 404s, then randomly return a mix of 200 and 500" +
+	"responses 30 times")
 
 func main() {
 	states := &sync.Map{}
@@ -26,7 +26,7 @@ func main() {
 	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
 		atomic.AddUint64(&reqs, 1)
 
-		writer.Write([]byte("Dummy HTTP Server"))
+		writer.Write([]byte(readme))
 	})
 
 	http.HandleFunc("/pattern", func(writer http.ResponseWriter, request *http.Request) {
