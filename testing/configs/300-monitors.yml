@@ -3,1502 +3,1502 @@ heartbeat.monitors:
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0001-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0002-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0003-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0004-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0005-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0006-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0007-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0008-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0009-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0010-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0011-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0012-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0013-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0014-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0015-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0016-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0017-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0018-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0019-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0020-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0021-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0022-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0023-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0024-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0025-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0026-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0027-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0028-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0029-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0030-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0031-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0032-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0033-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0034-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0035-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0036-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0037-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0038-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0039-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0040-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0041-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0042-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0043-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0044-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0045-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0046-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0047-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0048-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0049-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0050-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0051-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0052-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0053-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0054-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0055-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0056-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0057-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0058-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0059-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0060-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0061-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0062-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0063-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0064-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0065-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0066-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0067-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0068-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0069-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0070-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0071-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0072-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0073-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0074-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0075-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0076-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0077-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0078-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0079-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0080-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0081-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0082-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0083-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0084-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0085-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0086-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0087-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0088-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0089-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0090-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0091-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0092-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0093-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0094-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0095-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0096-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0097-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0098-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0099-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0100-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0101-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0102-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0103-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0104-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0105-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0106-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0107-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0108-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0109-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0110-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0111-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0112-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0113-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0114-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0115-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0116-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0117-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0118-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0119-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0120-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0121-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0122-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0123-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0124-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0125-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0126-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0127-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0128-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0129-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0130-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0131-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0132-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0133-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0134-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0135-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0136-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0137-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0138-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0139-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0140-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0141-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0142-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0143-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0144-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0145-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0146-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0147-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0148-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0149-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0150-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0151-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0152-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0153-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0154-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0155-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0156-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0157-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0158-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0159-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0160-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0161-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0162-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0163-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0164-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0165-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0166-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0167-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0168-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0169-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0170-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0171-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0172-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0173-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0174-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0175-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0176-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0177-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0178-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0179-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0180-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0181-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0182-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0183-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0184-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0185-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0186-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0187-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0188-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0189-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0190-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0191-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0192-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0193-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0194-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0195-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0196-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0197-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0198-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0199-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0200-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0201-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0202-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0203-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0204-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0205-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0206-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0207-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0208-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0209-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0210-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0211-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0212-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0213-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0214-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0215-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0216-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0217-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0218-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0219-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0220-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0221-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0222-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0223-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0224-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0225-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0226-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0227-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0228-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0229-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0230-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0231-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0232-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0233-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0234-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0235-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0236-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0237-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0238-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0239-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0240-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0241-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0242-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0243-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0244-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0245-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0246-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0247-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0248-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0249-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0250-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0251-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0252-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0253-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0254-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0255-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0256-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0257-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0258-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0259-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0260-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0261-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0262-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0263-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0264-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0265-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0266-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0267-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0268-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0269-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0270-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0271-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0272-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0273-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0274-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0275-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0276-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0277-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0278-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0279-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0280-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0281-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0282-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0283-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0284-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0285-intermittent
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x5,500x1
 - id: 0286-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0287-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0288-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0289-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0290-down
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=400x1
 - id: 0291-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0292-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0293-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0294-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0295-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0296-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0297-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0298-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 - id: 0299-up
   schedule: '@every 30s'
   timeout: 1s
   type: http
-  urls: http://localhost:5678
+  urls: http://localhost:5678/pattern?r=200x1
 output.elasticsearch:
   hosts:
   - localhost:9200

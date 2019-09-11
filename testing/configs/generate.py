@@ -32,7 +32,7 @@ with open("./_template.yml", 'r') as stream:
       "id": '%04d-%s' % (i, status),
       "type": "http",
       "schedule": "@every 30s",
-      "urls": "http://localhost:5678",
+      "urls": url,
       "timeout": "1s"
     })
 
