@@ -36,28 +36,29 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var Client = require('@elastic/elasticsearch').Client;
+var parseDuration = require('parse-duration');
+var moment = require('moment');
 var client = new Client({ node: 'http://localhost:9200' });
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var version, indexPrefix, doublings, templateName, template, now, sourceIndices, earliest, offset, totalCreated, i, destIndex, created, e_1, name_1, e_2;
+        var version, indexPrefix, cutoff, templateName, template, now, sourceIndices, earliest, offset, totalCreated, i, indexedTo, destIndex, ago, created, e_1, name_1, e_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4, getVersion()];
                 case 1:
                     version = _a.sent();
                     indexPrefix = "heartbeat-" + version;
-                    doublings = process.argv[2] ? parseInt(process.argv[2]) : 10;
-                    console.log("Will double contents " + doublings + " times in " + indexPrefix);
+                    console.log("Deleting all previous extended indices...");
+                    return [4, client.indices["delete"]({ index: "extended-hb-*" })];
+                case 2:
+                    _a.sent();
+                    cutoff = process.argv[2] ? parseDuration(process.argv[2]) : 10;
                     templateName = "heartbeat-" + version + ".0.0";
                     return [4, client.indices.getTemplate({ name: templateName })];
-                case 2:
+                case 3:
                     template = (_a.sent()).body[templateName];
                     template.index_patterns = ["heartbeat-" + version + ".0.0-*", "extended-hb-*"];
                     return [4, client.indices.putTemplate({ name: templateName, body: template })];
-                case 3:
-                    _a.sent();
-                    console.log("Deleting all previous doubled indices...");
-                    return [4, client.indices["delete"]({ index: "extended-hb-*" })];
                 case 4:
                     _a.sent();
                     now = new Date().valueOf();
@@ -68,14 +69,17 @@ function main() {
                     offset = now - earliest;
                     totalCreated = 0;
                     i = 0;
+                    indexedTo = 0;
                     _a.label = 6;
                 case 6:
-                    if (!(i < doublings)) return [3, 15];
+                    if (!(indexedTo < cutoff)) return [3, 14];
                     destIndex = "extended-hb-" + i;
                     _a.label = 7;
                 case 7:
                     _a.trys.push([7, 9, , 10]);
-                    console.log("Reindex " + sourceIndices + " -> " + destIndex + " (offset = " + offset / 1000 / 60 + " minutes)");
+                    ago = moment(new Date().valueOf() - offset);
+                    console.log((new Date()).getTime() - offset, new Date().valueOf(), offset, cutoff);
+                    console.log("Reindex " + sourceIndices + " -> " + destIndex + " (offset = " + ago.fromNow() + ")");
                     return [4, reindex(sourceIndices, destIndex, offset)];
                 case 8:
                     created = _a.sent();
@@ -105,12 +109,11 @@ function main() {
                     return [3, 13];
                 case 13:
                     sourceIndices.push(destIndex);
+                    indexedTo = offset;
                     offset = offset * 2;
-                    _a.label = 14;
-                case 14:
                     i++;
                     return [3, 6];
-                case 15:
+                case 14:
                     console.log("Done created " + totalCreated + " docs");
                     return [2];
             }
@@ -158,7 +161,7 @@ function reindex(sourceIndices, destIndex, offset) {
                         source: { index: sourceIndices },
                         dest: { index: destIndex },
                         script: {
-                            source: "\n                        String offsetStr = Long.toString(params.offset);\n                        ctx._id = ctx._id + offsetStr;\n                        Instant orig = Instant.parse(ctx._source[\"@timestamp\"]);\n                        ctx._source.monitor.check_group = ctx._source.monitor.check_group + \"-^-\" + offsetStr;\n                        ZonedDateTime zdt = ZonedDateTime.ofInstant(orig.minus(params.offset, ChronoUnit.MILLIS), ZoneId.of('Z'));\n                        ctx._source[\"@timestamp\"] = zdt.toString();\n                    ",
+                            source: "\n                        String offsetStr = Long.toString(params.offset);\n                        ctx._id = ctx._id + offsetStr;\n                        Instant orig = Instant.parse(ctx._source[\"@timestamp\"]);\n                        ctx._source.monitor.check_group = ctx._source.monitor.check_group + \"-^-\" + offsetStr;\n                        ctx._source[\"@timestamp\"] = orig.minus(params.offset, ChronoUnit.MILLIS);\n                    ",
                             params: { offset: offset }
                         }
                     };

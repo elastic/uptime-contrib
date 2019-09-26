@@ -1,22 +1,23 @@
 #!/usr/bin/env node
 
-const { Client } = require('@elastic/elasticsearch')
-const client = new Client({ node: 'http://localhost:9200' })
+const { Client } = require('@elastic/elasticsearch');
+const parseDuration = require('parse-duration');
+const moment = require('moment');
+const client = new Client({ node: 'http://localhost:9200' });
 
 async function main() {
     const version = await getVersion();
     const indexPrefix = `heartbeat-${version}`
 
-    const doublings: number = process.argv[2] ? parseInt(process.argv[2]) : 10;
-    console.log(`Will double contents ${doublings} times in ${indexPrefix}`);
+    console.log("Deleting all previous extended indices...");
+    await client.indices.delete({index: `extended-hb-*`});
+
+    const cutoff: number = process.argv[2] ? parseDuration(process.argv[2]) : 10;
 
     const templateName = `heartbeat-${version}.0.0`;
     const template = (await client.indices.getTemplate({name: templateName})).body[templateName];
     template.index_patterns = [`heartbeat-${version}.0.0-*`, "extended-hb-*"];
     await client.indices.putTemplate({name: templateName, body: template});
-
-    console.log("Deleting all previous doubled indices...");
-    await client.indices.delete({index: `extended-hb-*`});
 
     const now = new Date().valueOf();
 
@@ -27,11 +28,16 @@ async function main() {
     let offset = now - earliest;
 
     let totalCreated = 0;
-    for (let i = 0; i < doublings; i++) {
+    let i = 0;
+    let indexedTo = 0;
+    while (indexedTo < cutoff) {
         const destIndex = `extended-hb-${i}`
 
         try {
-            console.log(`Reindex ${sourceIndices} -> ${destIndex} (offset = ${offset/1000/60} minutes)`);
+            const ago = moment(new Date().valueOf() - offset);
+            console.log((new Date()).getTime() - offset, new Date().valueOf(), offset, cutoff);
+
+            console.log(`Reindex ${sourceIndices} -> ${destIndex} (offset = ${ago.fromNow()})`);
             const created = await reindex(sourceIndices, destIndex, offset)
             totalCreated += created;
             console.log(`Created ${created} new docs`);
@@ -52,8 +58,10 @@ async function main() {
             process.exit(1);
         }
 
-        sourceIndices.push(destIndex)
+        sourceIndices.push(destIndex);
+        indexedTo = offset;
         offset = offset*2;
+        i++;
     }
 
     console.log(`Done created ${totalCreated} docs`)
@@ -88,8 +96,7 @@ async function reindex(sourceIndices: string | string[], destIndex: string, offs
                         ctx._id = ctx._id + offsetStr;
                         Instant orig = Instant.parse(ctx._source["@timestamp"]);
                         ctx._source.monitor.check_group = ctx._source.monitor.check_group + "-^-" + offsetStr;
-                        ZonedDateTime zdt = ZonedDateTime.ofInstant(orig.minus(params.offset, ChronoUnit.MILLIS), ZoneId.of('Z'));
-                        ctx._source["@timestamp"] = zdt.toString();
+                        ctx._source["@timestamp"] = orig.minus(params.offset, ChronoUnit.MILLIS);
                     `,
             params: { offset }
         }

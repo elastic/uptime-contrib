@@ -7,6 +7,6 @@
         "sourceMap": true
     },
     "files": [
-        "extend_history.ts",
+        "extend_history.ts"
     ]
 }
