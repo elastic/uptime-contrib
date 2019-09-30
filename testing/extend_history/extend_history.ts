@@ -21,16 +21,18 @@ async function main() {
 
     const now = new Date().valueOf();
 
-    const sourceIndices = [`${indexPrefix}.*`];
+    const sourceIndices = [`${indexPrefix}.*20*`];
 
-    const earliest = await earliestTimestamp(indexPrefix);
-    // We're going to double the number of entries hence
-    let offset = now - earliest;
 
+    const maxBatch = 100000; // max number of docs to reindex in one go
     let totalCreated = 0;
     let i = 0;
     let indexedTo = 0;
     while (indexedTo < cutoff) {
+        const earliest = await earliestTimestamp(indexPrefix);
+        // We're going to double the number of entries hence
+        const offset = now - earliest;
+
         const destIndex = `extended-hb-${i}`
 
         try {
@@ -39,6 +41,12 @@ async function main() {
 
             console.log(`Reindex ${sourceIndices} -> ${destIndex} (offset = ${ago.fromNow()})`);
             const created = await reindex(sourceIndices, destIndex, offset)
+
+            console.log("CR", created, maxBatch)
+            if (created < maxBatch) {
+                sourceIndices.push(destIndex);
+            }
+
             totalCreated += created;
             console.log(`Created ${created} new docs`);
         } catch (e) {
@@ -58,9 +66,7 @@ async function main() {
             process.exit(1);
         }
 
-        sourceIndices.push(destIndex);
         indexedTo = offset;
-        offset = offset*2;
         i++;
     }
 
@@ -105,6 +111,7 @@ async function reindex(sourceIndices: string | string[], destIndex: string, offs
     const res = await client.reindex({
         wait_for_completion: true,
         refresh: true,
+        timeout: "1h",
         body
     });
 

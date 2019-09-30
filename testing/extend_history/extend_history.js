@@ -41,7 +41,7 @@ var moment = require('moment');
 var client = new Client({ node: 'http://localhost:9200' });
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var version, indexPrefix, cutoff, templateName, template, now, sourceIndices, earliest, offset, totalCreated, i, indexedTo, destIndex, ago, created, e_1, name_1, e_2;
+        var version, indexPrefix, cutoff, templateName, template, now, sourceIndices, maxBatch, totalCreated, i, indexedTo, earliest, offset, destIndex, ago, created, e_1, name_1, e_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4, getVersion()];
@@ -62,17 +62,18 @@ function main() {
                 case 4:
                     _a.sent();
                     now = new Date().valueOf();
-                    sourceIndices = [indexPrefix + ".*"];
-                    return [4, earliestTimestamp(indexPrefix)];
-                case 5:
-                    earliest = _a.sent();
-                    offset = now - earliest;
+                    sourceIndices = [indexPrefix + ".*20*"];
+                    maxBatch = 100000;
                     totalCreated = 0;
                     i = 0;
                     indexedTo = 0;
-                    _a.label = 6;
-                case 6:
+                    _a.label = 5;
+                case 5:
                     if (!(indexedTo < cutoff)) return [3, 14];
+                    return [4, earliestTimestamp(indexPrefix)];
+                case 6:
+                    earliest = _a.sent();
+                    offset = now - earliest;
                     destIndex = "extended-hb-" + i;
                     _a.label = 7;
                 case 7:
@@ -83,6 +84,10 @@ function main() {
                     return [4, reindex(sourceIndices, destIndex, offset)];
                 case 8:
                     created = _a.sent();
+                    console.log("CR", created, maxBatch);
+                    if (created < maxBatch) {
+                        sourceIndices.push(destIndex);
+                    }
                     totalCreated += created;
                     console.log("Created " + created + " new docs");
                     return [3, 10];
@@ -108,11 +113,9 @@ function main() {
                     process.exit(1);
                     return [3, 13];
                 case 13:
-                    sourceIndices.push(destIndex);
                     indexedTo = offset;
-                    offset = offset * 2;
                     i++;
-                    return [3, 6];
+                    return [3, 5];
                 case 14:
                     console.log("Done created " + totalCreated + " docs");
                     return [2];
@@ -168,6 +171,7 @@ function reindex(sourceIndices, destIndex, offset) {
                     return [4, client.reindex({
                             wait_for_completion: true,
                             refresh: true,
+                            timeout: "1h",
                             body: body
                         })];
                 case 1:
