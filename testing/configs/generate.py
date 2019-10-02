@@ -30,6 +30,7 @@ with open("./_template.yml", 'r') as stream:
     url = "http://localhost:5678/pattern?r=%s" % statusToPattern[status]
     monitors.append({
       "id": '%04d-%s' % (i, status),
+      "name": "Test %04d - %s" % (i, status),
       "type": "http",
       "schedule": "@every 30s",
       "urls": url,
