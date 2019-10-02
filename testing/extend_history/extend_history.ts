@@ -12,24 +12,33 @@ async function main() {
     console.log("Deleting all previous extended indices...");
     await client.indices.delete({index: `extended-hb-*`});
 
-    const cutoff: number = process.argv[2] ? parseDuration(process.argv[2]) : 10;
+    const cutoffDuration: number = process.argv[2] ? parseDuration(process.argv[2]) : parseDuration('10d');
+    const cutoff = new Date().getTime() - parseDuration('10d');
 
     const templateName = `heartbeat-${version}.0.0`;
     const template = (await client.indices.getTemplate({name: templateName})).body[templateName];
     template.index_patterns = [`heartbeat-${version}.0.0-*`, "extended-hb-*"];
+
+    template.settings.index.sort = {
+	    field: ["monitor.id", "@timestamp"],
+	    order: ["asc", "desc"]
+    };
+
     await client.indices.putTemplate({name: templateName, body: template});
 
     const now = new Date().valueOf();
 
     const sourceIndices = [`${indexPrefix}.*20*`];
 
-
-    const maxBatch = 100000; // max number of docs to reindex in one go
-    let totalCreated = 0;
     let i = 0;
-    let indexedTo = 0;
-    while (indexedTo < cutoff) {
+    let docsIndexed = 0;
+    while (true) {
         const earliest = await earliestTimestamp(indexPrefix);
+	if (earliest < cutoff) {
+	  break;
+	}
+	console.log("EC", earliest, cutoff);
+
         // We're going to double the number of entries hence
         const offset = now - earliest;
 
@@ -37,20 +46,17 @@ async function main() {
 
         try {
             const ago = moment(new Date().valueOf() - offset);
-            console.log((new Date()).getTime() - offset, new Date().valueOf(), offset, cutoff);
-
+            console.log("Cutoff", (new Date()).getTime() - offset, new Date().valueOf(), offset, cutoff);
             console.log(`Reindex ${sourceIndices} -> ${destIndex} (offset = ${ago.fromNow()})`);
-            const created = await reindex(sourceIndices, destIndex, offset)
+            await reindex(sourceIndices, destIndex, offset)
 
-            console.log("CR", created, maxBatch)
-            if (created < maxBatch) {
-                sourceIndices.push(destIndex);
-            }
+	    const countRes = await client.count({index: sourceIndices});
+	    console.log("Total indexed: ", countRes.body.count);
 
-            totalCreated += created;
-            console.log(`Created ${created} new docs`);
+
+            sourceIndices.push(destIndex);
         } catch (e) {
-            console.error("Error reindexing", JSON.stringify(e));
+            console.error("Error reindexing", e);
             process.exit(1);
         }
 
@@ -66,11 +72,8 @@ async function main() {
             process.exit(1);
         }
 
-        indexedTo = offset;
         i++;
     }
-
-    console.log(`Done created ${totalCreated} docs`)
 }
 
 main()
@@ -109,11 +112,19 @@ async function reindex(sourceIndices: string | string[], destIndex: string, offs
     };
 
     const res = await client.reindex({
-        wait_for_completion: true,
+        wait_for_completion: false,
         refresh: true,
         timeout: "1h",
+	max_docs: 1000000,
         body
     });
-
-    return res.body.created;
+    while (true) {
+      const t = await client.tasks.get({task_id: res.body.task});
+      //console.log("Task status", t);
+      await new Promise(r => setTimeout(r, 2000))
+      console.log("Waiting for async reindex...");
+      if (t.body.completed) {
+        break;
+      }
+    }
 }
