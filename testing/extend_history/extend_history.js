@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -41,7 +40,7 @@ var moment = require('moment');
 var client = new Client({ node: 'http://localhost:9200' });
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var version, indexPrefix, cutoff, templateName, template, now, sourceIndices, maxBatch, totalCreated, i, indexedTo, earliest, offset, destIndex, ago, created, e_1, name_1, e_2;
+        var version, indexPrefix, cutoffDuration, cutoff, templateName, template, now, sourceIndices, i, docsIndexed, earliest, offset, destIndex, ago, countRes, e_1, name_1, e_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4, getVersion()];
@@ -52,73 +51,76 @@ function main() {
                     return [4, client.indices["delete"]({ index: "extended-hb-*" })];
                 case 2:
                     _a.sent();
-                    cutoff = process.argv[2] ? parseDuration(process.argv[2]) : 10;
+                    cutoffDuration = process.argv[2] ? parseDuration(process.argv[2]) : parseDuration('10d');
+                    cutoff = new Date().getTime() - parseDuration('10d');
                     templateName = "heartbeat-" + version + ".0.0";
                     return [4, client.indices.getTemplate({ name: templateName })];
                 case 3:
                     template = (_a.sent()).body[templateName];
                     template.index_patterns = ["heartbeat-" + version + ".0.0-*", "extended-hb-*"];
+                    template.settings.index.sort = {
+                        field: ["monitor.id", "@timestamp"],
+                        order: ["asc", "desc"]
+                    };
                     return [4, client.indices.putTemplate({ name: templateName, body: template })];
                 case 4:
                     _a.sent();
                     now = new Date().valueOf();
                     sourceIndices = [indexPrefix + ".*20*"];
-                    maxBatch = 100000;
-                    totalCreated = 0;
                     i = 0;
-                    indexedTo = 0;
+                    docsIndexed = 0;
                     _a.label = 5;
                 case 5:
-                    if (!(indexedTo < cutoff)) return [3, 14];
+                    if (!true) return [3, 15];
                     return [4, earliestTimestamp(indexPrefix)];
                 case 6:
                     earliest = _a.sent();
+                    if (earliest < cutoff) {
+                        return [3, 15];
+                    }
+                    console.log("EC", earliest, cutoff);
                     offset = now - earliest;
                     destIndex = "extended-hb-" + i;
                     _a.label = 7;
                 case 7:
-                    _a.trys.push([7, 9, , 10]);
+                    _a.trys.push([7, 10, , 11]);
                     ago = moment(new Date().valueOf() - offset);
-                    console.log((new Date()).getTime() - offset, new Date().valueOf(), offset, cutoff);
+                    console.log("Cutoff", (new Date()).getTime() - offset, new Date().valueOf(), offset, cutoff);
                     console.log("Reindex " + sourceIndices + " -> " + destIndex + " (offset = " + ago.fromNow() + ")");
                     return [4, reindex(sourceIndices, destIndex, offset)];
                 case 8:
-                    created = _a.sent();
-                    console.log("CR", created, maxBatch);
-                    if (created < maxBatch) {
-                        sourceIndices.push(destIndex);
-                    }
-                    totalCreated += created;
-                    console.log("Created " + created + " new docs");
-                    return [3, 10];
+                    _a.sent();
+                    return [4, client.count({ index: sourceIndices })];
                 case 9:
-                    e_1 = _a.sent();
-                    console.error("Error reindexing", JSON.stringify(e_1));
-                    process.exit(1);
-                    return [3, 10];
+                    countRes = _a.sent();
+                    console.log("Total indexed: ", countRes.body.count);
+                    sourceIndices.push(destIndex);
+                    return [3, 11];
                 case 10:
-                    _a.trys.push([10, 12, , 13]);
+                    e_1 = _a.sent();
+                    console.error("Error reindexing", e_1);
+                    process.exit(1);
+                    return [3, 11];
+                case 11:
+                    _a.trys.push([11, 13, , 14]);
                     name_1 = indexPrefix + ".0.0-extension-" + i;
                     console.log("Alias index " + destIndex + " to " + name_1);
                     return [4, client.indices.putAlias({
                             index: destIndex,
                             name: name_1
                         })];
-                case 11:
-                    _a.sent();
-                    return [3, 13];
                 case 12:
+                    _a.sent();
+                    return [3, 14];
+                case 13:
                     e_2 = _a.sent();
                     console.error("Error aliasing", JSON.stringify(e_2));
                     process.exit(1);
-                    return [3, 13];
-                case 13:
-                    indexedTo = offset;
+                    return [3, 14];
+                case 14:
                     i++;
                     return [3, 5];
-                case 14:
-                    console.log("Done created " + totalCreated + " docs");
-                    return [2];
+                case 15: return [2];
             }
         });
     });
@@ -156,7 +158,7 @@ function getVersion() {
 }
 function reindex(sourceIndices, destIndex, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var body, res;
+        var body, res, t;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -169,14 +171,29 @@ function reindex(sourceIndices, destIndex, offset) {
                         }
                     };
                     return [4, client.reindex({
-                            wait_for_completion: true,
+                            wait_for_completion: false,
                             refresh: true,
                             timeout: "1h",
+                            max_docs: 1000000,
                             body: body
                         })];
                 case 1:
                     res = _a.sent();
-                    return [2, res.body.created];
+                    _a.label = 2;
+                case 2:
+                    if (!true) return [3, 5];
+                    return [4, client.tasks.get({ task_id: res.body.task })];
+                case 3:
+                    t = _a.sent();
+                    return [4, new Promise(function (r) { return setTimeout(r, 2000); })];
+                case 4:
+                    _a.sent();
+                    console.log("Waiting for async reindex...");
+                    if (t.body.completed) {
+                        return [3, 5];
+                    }
+                    return [3, 2];
+                case 5: return [2];
             }
         });
     });
