@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -166,7 +167,7 @@ function reindex(sourceIndices, destIndex, offset) {
                         source: { index: sourceIndices },
                         dest: { index: destIndex },
                         script: {
-                            source: "\n                        String offsetStr = Long.toString(params.offset);\n                        ctx._id = ctx._id + offsetStr;\n                        Instant orig = Instant.parse(ctx._source[\"@timestamp\"]);\n                        ctx._source.monitor.check_group = ctx._source.monitor.check_group + \"-^-\" + offsetStr;\n                        ctx._source[\"@timestamp\"] = orig.minus(params.offset, ChronoUnit.MILLIS);\n                    ",
+                            source: "\n                        String offsetStr = Long.toString(params.offset);\n                        ctx._id = ctx._id + offsetStr;\n                        Instant origTs = Instant.parse(ctx._source[\"@timestamp\"]);\n                        ctx._source.monitor.check_group = ctx._source.monitor.check_group + \"-^-\" + offsetStr;\n                        ctx._source[\"@timestamp\"] = origTs.minus(params.offset, ChronoUnit.MILLIS);\n\n                        Instant tsStart = Instant.parse(ctx._source.monitor.timespan.gte);\n                        ctx._source.monitor.timespan.gte = tsStart.minus(params.offset, ChronoUnit.MILLIS);\n                        Instant tsEnd = Instant.parse(ctx._source.monitor.timespan.lt);\n                        ctx._source.monitor.timespan.lt = tsEnd.minus(params.offset, ChronoUnit.MILLIS);\n                    ",
                             params: { offset: offset }
                         }
                     };
