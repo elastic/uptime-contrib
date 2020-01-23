@@ -103,9 +103,14 @@ async function reindex(sourceIndices: string | string[], destIndex: string, offs
             source: `
                         String offsetStr = Long.toString(params.offset);
                         ctx._id = ctx._id + offsetStr;
-                        Instant orig = Instant.parse(ctx._source["@timestamp"]);
+                        Instant origTs = Instant.parse(ctx._source["@timestamp"]);
                         ctx._source.monitor.check_group = ctx._source.monitor.check_group + "-^-" + offsetStr;
-                        ctx._source["@timestamp"] = orig.minus(params.offset, ChronoUnit.MILLIS);
+                        ctx._source["@timestamp"] = origTs.minus(params.offset, ChronoUnit.MILLIS);
+
+                        Instant tsStart = Instant.parse(ctx._source.monitor.timespan.gte);
+                        ctx._source.monitor.timespan.gte = tsStart.minus(params.offset, ChronoUnit.MILLIS);
+                        Instant tsEnd = Instant.parse(ctx._source.monitor.timespan.lt);
+                        ctx._source.monitor.timespan.lt = tsEnd.minus(params.offset, ChronoUnit.MILLIS);
                     `,
             params: { offset }
         }
