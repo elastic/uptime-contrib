@@ -14,9 +14,14 @@ import (
 	"time"
 )
 
-var readme = []byte("Dummy HTTP Server\nExample req: Use a path like /pattern?r='200x50,404x20,200|500x30'. " +
-	"That pattern would return 50 200 responses, then 20 404s, then randomly return a mix of 200 and 500" +
-	"responses 30 times")
+var readme = []byte(
+	"Dummy HTTP Server\n" +
+		"Example req: Use a path like /pattern?r='200x50,404x20,200|500x30'. \n" +
+		"That pattern would return 50 200 responses, then 20 404s, then randomly return a mix of 200 and 500\n" +
+		"responses 30 times\n" +
+		"\n" +
+		"To test redirects use /redirect?to=/newpath\n",
+)
 
 func main() {
 	states := &sync.Map{}
@@ -35,6 +40,19 @@ func main() {
 		status, body := handlePattern(states, request.URL)
 		writer.WriteHeader(status)
 		writer.Write([]byte(body))
+	})
+
+	http.HandleFunc("/redirect", func(writer http.ResponseWriter, request *http.Request) {
+		atomic.AddUint64(&reqs, 1)
+
+		if request == nil || request.URL.Query().Get("to") == "" {
+			writer.WriteHeader(400)
+			writer.Write([]byte("Please specify 'to' query parameter"))
+			return
+		}
+
+		to := request.URL.Query().Get("to")
+		http.Redirect(writer, request, to, 302)
 	})
 
 	go func() {
