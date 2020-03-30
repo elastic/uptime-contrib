@@ -100,7 +100,7 @@ curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/role/heartbeat
 curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/user/heartbeat?pretty" -H 'Content-Type: application/json' -d'
 {
   "password" : "changeme",
-  "roles" : [ "heartbeat" ],
+  "roles" : [ "heartbeat", "ingest_admin" ],
   "full_name" : "Jack Nicholson",
   "email" : "jacknich@example.com"
 }
