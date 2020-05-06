@@ -29,7 +29,11 @@ class Transformer
 
   def run()
     @ops_sequence.each do |op|
-      self.send(op)
+      args = []
+      if op =~ /\w+\(([^\)]+)\)/
+        args = $1.split(",")
+      end
+      self.send(op, *args)
     end
   end
 
