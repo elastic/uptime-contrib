@@ -1,8 +1,6 @@
 #!/bin/bash
-set -e
-set -x
 
-curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/user/kibana_user?pretty" -H 'Content-Type: application/json' -d'
+curl -sk -o /dev/null/ -X PUT "https://elastic:changeme@localhost:9200/_security/user/kibana_user?pretty" -H 'Content-Type: application/json' -d'
 {
   "password" : "changeme",
   "roles" : [ "kibana" ],
@@ -11,7 +9,7 @@ curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/user/kibana_us
 }
 '
 
-curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/role/uptime_read?pretty" -H 'Content-Type: application/json' -d'
+curl -sk -o /dev/null/ -X PUT "https://elastic:changeme@localhost:9200/_security/role/uptime_read?pretty" -H 'Content-Type: application/json' -d'
 {
   "indices": [
     {
@@ -33,7 +31,7 @@ curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/role/uptime_re
 }
 '
 
-curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/user/uptime_read?pretty" -H 'Content-Type: application/json' -d'
+curl -sk -o /dev/null/ -X PUT "https://elastic:changeme@localhost:9200/_security/user/uptime_read?pretty" -H 'Content-Type: application/json' -d'
 {
   "password" : "changeme",
   "roles" : [ "uptime_read" ],
@@ -42,7 +40,7 @@ curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/user/uptime_re
 }
 '
 
-curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/role/uptime_all?pretty" -H 'Content-Type: application/json' -d'
+curl -sk -o /dev/null/ -X PUT "https://elastic:changeme@localhost:9200/_security/role/uptime_all?pretty" -H 'Content-Type: application/json' -d'
 {
   "indices": [
     {
@@ -64,7 +62,7 @@ curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/role/uptime_al
 }
 '
 
-curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/user/uptime_all?pretty" -H 'Content-Type: application/json' -d'
+curl -sk -o /dev/null/ -X PUT "https://elastic:changeme@localhost:9200/_security/user/uptime_all?pretty" -H 'Content-Type: application/json' -d'
 {
   "password" : "changeme",
   "roles" : [ "uptime_all" ],
@@ -74,7 +72,7 @@ curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/user/uptime_al
 '
 
 
-curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/role/heartbeat?pretty" -H 'Content-Type: application/json' -d'
+curl -sk -o /dev/null/ -X PUT "https://elastic:changeme@localhost:9200/_security/role/heartbeat?pretty" -H 'Content-Type: application/json' -d'
 {
   "cluster": ["monitor", "manage_ilm"],
   "indices": [
@@ -97,7 +95,7 @@ curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/role/heartbeat
 }
 '
 
-curl -k -X PUT "https://elastic:changeme@localhost:9200/_security/user/heartbeat?pretty" -H 'Content-Type: application/json' -d'
+curl -sk -o /dev/null/ -X PUT "https://elastic:changeme@localhost:9200/_security/user/heartbeat?pretty" -H 'Content-Type: application/json' -d'
 {
   "password" : "changeme",
   "roles" : [ "heartbeat", "ingest_admin" ],
