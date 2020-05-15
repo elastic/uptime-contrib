@@ -2,6 +2,7 @@
 
 require 'yaml'
 require 'fileutils'
+require 'tmpdir'
 
 class Transformer
   def self.run(config_path, ops_sequence)
@@ -14,7 +15,7 @@ class Transformer
 
     t = self.new(config_path, ops_sequence)
     t.run()
-    t.save()
+    t.exec()
   end
 
   attr_reader :config
@@ -49,6 +50,7 @@ class Transformer
   def use_config(name)
     path = File.join(File.dirname(__FILE__), 'configs', name)
     FileUtils.cp(path, 'heartbeat.yml')
+    FileUtils.chmod(0755, 'heartbeat.yml')
   end
 
   def to_console
@@ -98,8 +100,7 @@ class Transformer
     }
   end
 
-
-  def add_geo_mpls
+  def add_geo(name,location=nil)
     p = @config['processors'].find {|p| p.has_key?('add_observer_metadata')}
     if !p
       p = {}
@@ -108,8 +109,8 @@ class Transformer
     p.merge!({
       "add_observer_metadata" => {
         "geo" => {
-          "name" => "minneapolis",
-          "location" => "44.986656, -93.258133"
+          "name" => name,
+          "location" => location || "44.986656, -93.258133"
         }
       }
     })
@@ -117,6 +118,16 @@ class Transformer
 
   def print_yaml
     puts @config.to_yaml
+  end
+
+  def exec
+    self.save()
+    dir = Dir.mktmpdir("heartbeat-tmp-data-")
+    at_exit { FileUtils.remove_entry(dir) }
+    cmd = ["nice", "-n", "19", "./heartbeat", "-e", "--path.data", dir]
+    puts "Running: #{cmd.join(' ')}"
+    $stdout.sync = true
+    system(*cmd, out: $stdout, err: $stderr)
   end
 
   def save()
