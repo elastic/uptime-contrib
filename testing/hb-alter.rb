@@ -22,10 +22,14 @@ class Transformer
 
   def initialize(config_path, ops_sequence)
     @config_path = config_path
+    self.reload_yaml
+    @ops_sequence = ops_sequence.split(",")
+  end
+
+  def reload_yaml()
     File.open(@config_path) do |f|
       @config = YAML.load(f)
     end
-    @ops_sequence = ops_sequence.split(",")
   end
 
   def run()
@@ -49,8 +53,10 @@ class Transformer
 
   def use_config(name)
     path = File.join(File.dirname(__FILE__), 'configs', name)
+    puts "Copy #{path} to heartbeat.yml"
     FileUtils.cp(path, 'heartbeat.yml')
     FileUtils.chmod(0755, 'heartbeat.yml')
+    self.reload_yaml
   end
 
   def to_console
