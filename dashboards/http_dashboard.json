@@ -3,7 +3,7 @@
     "_id": "f3e771c0-eb19-11e6-be20-559646f8b9ba",
     "_type": "dashboard",
     "_source": {
-      "title": "Heartbeat HTTP monitoring",
+      "title": "[Heartbeat] HTTP monitoring",
       "hits": 0,
       "description": "",
       "panelsJSON": "[{\"size_x\":12,\"size_y\":4,\"panelIndex\":1,\"col\":1,\"row\":7,\"panelRefName\":\"panel_0\"},{\"size_x\":4,\"size_y\":4,\"panelIndex\":2,\"col\":9,\"row\":1,\"panelRefName\":\"panel_1\"},{\"size_x\":8,\"size_y\":4,\"panelIndex\":3,\"col\":1,\"row\":1,\"panelRefName\":\"panel_2\"},{\"size_x\":12,\"size_y\":2,\"panelIndex\":4,\"col\":1,\"row\":5,\"panelRefName\":\"panel_3\"},{\"size_x\":12,\"size_y\":5,\"panelIndex\":5,\"col\":1,\"row\":11,\"panelRefName\":\"panel_4\"}]",
@@ -53,7 +53,7 @@
     "_id": "c65ef340-eb19-11e6-be20-559646f8b9ba",
     "_type": "visualization",
     "_source": {
-      "title": "HTTP ping times",
+      "title": "[Heartbeat] HTTP ping times",
       "visState": "{\"type\":\"area\",\"listeners\":{},\"params\":{\"scale\":\"linear\",\"legendPosition\":\"right\",\"addTimeMarker\":false,\"interpolate\":\"linear\",\"addLegend\":true,\"mode\":\"stacked\",\"defaultYExtents\":false,\"setYExtents\":false,\"addTooltip\":true,\"times\":[]},\"aggs\":[{\"params\":{\"field\":\"resolve.rtt.us\",\"customLabel\":\"\"},\"type\":\"max\",\"enabled\":true,\"id\":\"1\",\"schema\":\"metric\"},{\"params\":{\"field\":\"tcp.rtt.connect.us\"},\"type\":\"max\",\"enabled\":true,\"id\":\"3\",\"schema\":\"metric\"},{\"params\":{\"field\":\"tls.rtt.handshake.us\"},\"type\":\"max\",\"enabled\":true,\"id\":\"5\",\"schema\":\"metric\"},{\"params\":{\"field\":\"http.rtt.response_header.us\"},\"type\":\"max\",\"enabled\":true,\"id\":\"4\",\"schema\":\"metric\"},{\"params\":{\"customInterval\":\"2h\",\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}},\"type\":\"date_histogram\",\"enabled\":true,\"id\":\"2\",\"schema\":\"segment\"}],\"title\":\"HTTP ping times\"}",
       "uiStateJSON": "{}",
       "description": "",
@@ -81,7 +81,7 @@
     "_id": "1738dbc0-eb1d-11e6-be20-559646f8b9ba",
     "_type": "visualization",
     "_source": {
-      "title": "HTTP monitors",
+      "title": "[Heartbeat] HTTP monitors",
       "visState": "{\"type\":\"table\",\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null},\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"totalFunc\":\"sum\",\"showTotal\":false},\"aggs\":[{\"params\":{\"orderBy\":\"1\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"field\":\"monitor.id\",\"otherBucketLabel\":\"Other\",\"otherBucket\":false,\"order\":\"desc\",\"size\":5},\"type\":\"terms\",\"enabled\":true,\"id\":\"2\",\"schema\":\"bucket\"},{\"params\":{\"aggregate\":\"concat\",\"field\":\"monitor.status\",\"sortOrder\":\"desc\",\"sortField\":\"@timestamp\",\"size\":1},\"type\":\"top_hits\",\"enabled\":true,\"id\":\"9\",\"schema\":\"metric\"},{\"params\":{\"field\":\"monitor.duration.us\"},\"type\":\"max\",\"enabled\":true,\"id\":\"1\",\"schema\":\"metric\"},{\"params\":{\"field\":\"resolve.rtt.us\"},\"type\":\"max\",\"enabled\":true,\"id\":\"5\",\"schema\":\"metric\"},{\"params\":{\"field\":\"tcp.rtt.connect.us\"},\"type\":\"max\",\"enabled\":true,\"id\":\"6\",\"schema\":\"metric\"},{\"params\":{\"field\":\"tls.rtt.handshake.us\"},\"type\":\"max\",\"enabled\":true,\"id\":\"7\",\"schema\":\"metric\"},{\"params\":{\"field\":\"http.rtt.response_header.us\"},\"type\":\"max\",\"enabled\":true,\"id\":\"8\",\"schema\":\"metric\"},{\"params\":{\"orderBy\":\"1\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"field\":\"monitor.ip\",\"otherBucketLabel\":\"Other\",\"otherBucket\":false,\"order\":\"desc\",\"size\":5},\"type\":\"terms\",\"enabled\":true,\"id\":\"10\",\"schema\":\"bucket\"}],\"title\":\"HTTP monitors\"}",
       "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}",
       "description": "",
@@ -109,7 +109,7 @@
     "_id": "091c3a90-eb1e-11e6-be20-559646f8b9ba",
     "_type": "visualization",
     "_source": {
-      "title": "HTTP up status",
+      "title": "[Heartbeat] HTTP up status",
       "visState": "{\"type\":\"area\",\"params\":{\"scale\":\"linear\",\"seriesParams\":[{\"show\":\"true\",\"data\":{\"id\":\"1\",\"label\":\"Percentage of Count\"},\"interpolate\":\"linear\",\"mode\":\"stacked\",\"valueAxis\":\"ValueAxis-1\",\"type\":\"area\"}],\"yAxis\":{\"max\":100,\"min\":0},\"type\":\"area\",\"categoryAxes\":[{\"style\":{},\"scale\":{\"type\":\"linear\"},\"show\":true,\"title\":{},\"labels\":{\"truncate\":100,\"show\":true},\"position\":\"bottom\",\"type\":\"category\",\"id\":\"CategoryAxis-1\"}],\"legendPosition\":\"right\",\"addTimeMarker\":false,\"interpolate\":\"linear\",\"addLegend\":true,\"grid\":{\"style\":{\"color\":\"#eee\"},\"categoryLines\":false},\"mode\":\"percentage\",\"defaultYExtents\":false,\"setYExtents\":true,\"addTooltip\":true,\"valueAxes\":[{\"style\":{},\"scale\":{\"min\":0,\"max\":100,\"mode\":\"percentage\",\"defaultYExtents\":false,\"setYExtents\":true,\"type\":\"linear\"},\"name\":\"LeftAxis-1\",\"show\":true,\"title\":{\"text\":\"Percentage of Count\"},\"labels\":{\"filter\":false,\"rotate\":0,\"truncate\":100,\"show\":true},\"position\":\"left\",\"type\":\"value\",\"id\":\"ValueAxis-1\"}],\"times\":[]},\"aggs\":[{\"params\":{},\"type\":\"count\",\"enabled\":true,\"id\":\"1\",\"schema\":\"metric\"},{\"params\":{\"customInterval\":\"2h\",\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}},\"type\":\"date_histogram\",\"enabled\":true,\"id\":\"2\",\"schema\":\"segment\"},{\"params\":{\"filters\":[{\"input\":{\"query\":\"monitor.status: down\"},\"label\":\"\"},{\"input\":{\"query\":\"monitor.status: up\"}}]},\"type\":\"filters\",\"enabled\":true,\"id\":\"3\",\"schema\":\"group\"}],\"title\":\"HTTP up status\"}",
       "uiStateJSON": "{\"vis\": {\"colors\": {\"monitor.status: down\": \"#E24D42\", \"monitor.status: up\": \"#629E51\"}}}",
       "description": "",
@@ -137,7 +137,7 @@
     "_id": "0f4c0560-eb20-11e6-9f11-159ff202874a",
     "_type": "visualization",
     "_source": {
-      "title": "HTTP duration heatmap",
+      "title": "[Heartbeat] HTTP duration heatmap",
       "visState": "{\"type\":\"heatmap\",\"listeners\":{},\"params\":{\"colorSchema\":\"Blues\",\"invertColors\":false,\"legendPosition\":\"right\",\"addLegend\":true,\"colorsRange\":[],\"colorsNumber\":10,\"setColorRange\":false,\"percentageMode\":false,\"addTooltip\":true,\"valueAxes\":[{\"show\":false,\"labels\":{\"color\":\"#555\",\"rotate\":0,\"show\":false},\"type\":\"value\",\"id\":\"ValueAxis-1\",\"scale\":{\"defaultYExtents\":false,\"type\":\"linear\"}}],\"enableHover\":false,\"times\":[]},\"aggs\":[{\"params\":{},\"type\":\"count\",\"enabled\":true,\"id\":\"1\",\"schema\":\"metric\"},{\"params\":{\"customInterval\":\"2h\",\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}},\"type\":\"date_histogram\",\"enabled\":true,\"id\":\"2\",\"schema\":\"segment\"},{\"params\":{\"field\":\"monitor.duration.us\",\"interval\":50000,\"extended_bounds\":{}},\"type\":\"histogram\",\"enabled\":true,\"id\":\"3\",\"schema\":\"group\"}],\"title\":\"HTTP duration heatmap\"}",
       "uiStateJSON": "{\"vis\": {\"defaultColors\": {\"8 - 9\": \"rgb(74,152,201)\", \"5 - 6\": \"rgb(148,196,223)\", \"11 - 12\": \"rgb(8,74,145)\", \"2 - 3\": \"rgb(227,238,249)\", \"3 - 4\": \"rgb(208,225,242)\", \"9 - 10\": \"rgb(46,126,188)\", \"4 - 5\": \"rgb(182,212,233)\", \"0 - 2\": \"rgb(247,251,255)\", \"10 - 11\": \"rgb(23,100,171)\", \"6 - 8\": \"rgb(107,174,214)\"}}}",
       "description": "",
@@ -165,7 +165,7 @@
     "_id": "02014c80-29d2-11e7-a68f-bfaa2341cc52",
     "_type": "search",
     "_source": {
-      "title": "Heartbeat HTTP pings",
+      "title": "[Heartbeat] Heartbeat HTTP pings",
       "description": "",
       "hits": 0,
       "columns": [
@@ -211,7 +211,7 @@
     "_id": "920e8140-eb1a-11e6-be20-559646f8b9ba",
     "_type": "visualization",
     "_source": {
-      "title": "HTTP monitors status",
+      "title": "[Heartbeat] HTTP monitors status",
       "visState": "{\"type\":\"pie\",\"listeners\":{},\"params\":{\"legendPosition\":\"bottom\",\"isDonut\":false,\"addTooltip\":true,\"addLegend\":true},\"aggs\":[{\"params\":{\"field\":\"monitor.id\"},\"type\":\"cardinality\",\"enabled\":true,\"id\":\"1\",\"schema\":\"metric\"},{\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"monitor.status: up\"}}},\"label\":\"\"},{\"input\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"monitor.status: down\"}}}}]},\"type\":\"filters\",\"enabled\":true,\"id\":\"3\",\"schema\":\"segment\"},{\"params\":{\"orderBy\":\"1\",\"field\":\"http.response.status_code\",\"order\":\"desc\",\"size\":5},\"type\":\"terms\",\"enabled\":true,\"id\":\"2\",\"schema\":\"segment\"}],\"title\":\"HTTP monitors status\"}",
       "uiStateJSON": "{\"vis\": {\"colors\": {\"monitor.status: down\": \"#E24D42\", \"200\": \"#B7DBAB\", \"monitor.status: up\": \"#629E51\"}, \"legendOpen\": true}}",
       "description": "",
