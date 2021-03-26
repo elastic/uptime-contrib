@@ -67,7 +67,9 @@ class Transformer
   def to_es
     @config.delete("output.console") rescue nil
     @config["output.elasticsearch"] = {
-      "hosts" => "localhost:9200"
+      "hosts" => "localhost:9200",
+      "username" => "elastic",
+      "password" => "changeme"
     }
   end
 
@@ -105,6 +107,17 @@ class Transformer
       }
     }
   end
+
+  def to_auth_es
+    @config.delete("output.console") rescue nil
+    @config["output.elasticsearch"] = {
+      "hosts" => ["localhost:9200"],
+      "protocol" => "http",
+      "username" =>  "elastic",
+      "password" =>  "changeme",
+    }
+  end
+
 
   def add_geo(name,location=nil)
     p = @config['processors'].find {|p| p.has_key?('add_observer_metadata')}

@@ -3,6 +3,12 @@ heartbeat.config.monitors:
   path: "${path.config}/monitors.d/*.yml"
   reload.enabled: false
   reload.period: 5s
+
+heartbeat.synthetic_suites:
+- name: Todos suite
+  path: "/home/andrewvc/projects/synthetics/examples/todos"
+  schedule: "@every 1m"
+
 heartbeat.monitors:
 - type: http
   id: elastic-co
@@ -12,6 +18,15 @@ heartbeat.monitors:
   mode: all
   ipv6: false
   tags: ["org:elastic"]
+- type: http
+  id: elastic-co-404
+  name: Elastic 404
+  urls: ["https://www.elastic.co/i/am/not/a/realpagebutactually/a/404"]
+  schedule: "@every 60s"
+  mode: all
+  ipv6: false
+  tags: ["org:elastic"]
+  response.include_body_max_bytes: 101024
 - type: http
   id: elastic-observability
   name: Elastic Forums
